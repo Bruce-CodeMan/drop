@@ -5,7 +5,10 @@ import { ApolloDriver } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
 
 // Import the libraries from the external
-import { UserModule } from '@/modules';
+import { 
+	UserModule,
+	OssModule
+} from '@/modules';
 import { configOptions, connectionOption } from './utils';
 
 @Module({
@@ -16,7 +19,8 @@ import { configOptions, connectionOption } from './utils';
 			driver: ApolloDriver,
 			autoSchemaFile: true
 		}),
-		UserModule
+		UserModule,
+		OssModule
 	]
 })
 export class AppModule {}
